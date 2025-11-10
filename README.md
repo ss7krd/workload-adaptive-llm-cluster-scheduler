@@ -1,11 +1,7 @@
 ## Workload-Adaptive LLM Cluster Scheduler (EuroSys '26)
 
-The main folders are AdaGen and Graph. Under AdaGen, ```adagen/benchmark/benchmark_runner.py``` file consists of the scheduling logics following the paper. Graph consists of the matplotlib codes to produce each figure.
+The main folders are AdaGen and Graph. Under AdaGen, ```adagen/benchmark/benchmark_runner.py``` file consists of the scheduling logics following the paper. vLLM is used as the inference engine for this project. Graph folder consists of the matplotlib codes to produce each figure.
 
-The environment is already setup under the virtual environment named ```torchEnv``` in syrax-41. Command to enable it: 
-```
-mamba activate torchEnv
-```
 The necessary libraries and dependencies of the virtual environment required to run the project are given in ```requirements.txt``` file. To setup a new virtual environment using ```mamba``` or any other package manager, one needs to install these libraries using pip.
 
 
