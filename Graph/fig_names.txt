@@ -1,0 +1,74 @@
+obs_ttft_tbt_llama [final for table values]
+
+obs_ttft_tbt_mixtral [final for table values]
+
+obs_ttft_dist_llama [baad]
+
+obs_ttft_dist_mixtral [baad]
+
+obs_ttft_tbt_reassignment_llama [final for table values][kisu baki-may update now]
+
+obs_ttft_tbt_reassignment_mixtral [final for table values][baki-use placeholder]
+
+obs_ttft_dist_reassignment_llama [final for table values][kisu baki-try to update now]
+
+obs_ttft_dist_reassignment_mixtral [final for table values][baki-use placeholder]
+
+obs_ttft_plength_llama [x][baki-may draw now]
+
+obs_ttft_plength_mixtral [x][baki-use placeholder]
+
+obs_ttft_plength_pdist_llama [final for table values][baki-may draw now]
+
+obs_ttft_plength_pdist_mixtral [final for table values][baki-use placeholder]
+
+obs_ttft_dlength_llama [x]
+
+obs_ttft_dlength_mixtral [x][baki-use placeholder]
+
+obs_ttft_dlength_ddist_llama [final for table values]
+
+obs_ttft_dlength_ddist_mixtral [final for table values][baki-use placeholder]
+
+
+
+
+
+TTFTSLOattainment_requestRate_llama8
+
+TTFTSLOattainment_requestRate_mixtral
+
+TTFTSLOattainment_requestRate_llama70
+
+TTFTSLOattainment_sloScale_llama8
+
+TTFTSLOattainment_sloScale_mixtral
+
+TTFTSLOattainment_sloScale_llama70
+
+TBTSLOattainment_allModels 
+
+TTFTSLOattainment_allModels_compareOptimal [x] [also TBTSLOattainment o dibo compare optimal kore?]
+
+TTFT_TBT_comparison_with_exhaustive
+
+TTFTSLOattainment_requestRate_llama8_scalability [only llama70 dekhabo?]
+
+TTFTSLOattainment_instanceCount_llama8_costEffectiveness [other models er jonno amader cost-effectiveness dekhanor jonno bar graph use korbo?]
+
+ttft_tbt_with_another_inst_sch
+
+TTFTSLOattainment_eachComponent_llama8
+
+time_overhead
+
+n_value_sensitivity_llama8
+
+
+
+
+
+
+
+
+
