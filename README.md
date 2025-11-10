@@ -1,4 +1,4 @@
-# AdaGen: Workload-Adaptive Cluster Scheduler for Latency-Optimal LLM Inference Serving
+Workload-Adaptive LLM Cluster Scheduler (EuroSys '26)
 
 The main folders are AdaGen and Graph. Under AdaGen, ```adagen/benchmark/benchmark_runner.py``` file consists of the scheduling logics following the paper. Graph consists of the matplotlib codes to produce each figure.
 
