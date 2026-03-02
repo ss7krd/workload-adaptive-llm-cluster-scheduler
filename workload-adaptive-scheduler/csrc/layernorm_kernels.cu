@@ -4,7 +4,7 @@
 #include "dispatch_utils.h"
 #include "reduction_utils.cuh"
 
-namespace sarathi {
+namespace adagen {
 
 // TODO(woosuk): Further optimize this kernel.
 template<typename scalar_t>
@@ -34,7 +34,7 @@ __global__ void rms_norm_kernel(
   }
 }
 
-} // namespace sarathi
+} // namespace adagen
 
 void rms_norm(
   torch::Tensor& out,      // [num_tokens, hidden_size]
@@ -47,11 +47,11 @@ void rms_norm(
   dim3 grid(num_tokens);
   dim3 block(std::min(hidden_size, 1024));
   const cudaStream_t stream = at::cuda::getCurrentCUDAStream();
-  SARATHI_DISPATCH_FLOATING_TYPES(
+  adagen_DISPATCH_FLOATING_TYPES(
     input.scalar_type(),
     "rms_norm_kernel",
     [&] {
-      sarathi::rms_norm_kernel<scalar_t><<<grid, block, 0, stream>>>(
+      adagen::rms_norm_kernel<scalar_t><<<grid, block, 0, stream>>>(
         out.data_ptr<scalar_t>(),
         input.data_ptr<scalar_t>(),
         weight.data_ptr<scalar_t>(),

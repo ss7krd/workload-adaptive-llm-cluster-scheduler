@@ -26,10 +26,10 @@
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
 #define WARP_SIZE 32
-#define SARATHI_SHFL_XOR_SYNC_WIDTH(var, lane_mask, width) \
+#define adagen_SHFL_XOR_SYNC_WIDTH(var, lane_mask, width) \
     __shfl_xor_sync(uint32_t(-1), var, lane_mask, width)
 
-namespace sarathi {
+namespace adagen {
 namespace moe {
 
 /// Aligned array type
@@ -269,7 +269,7 @@ __launch_bounds__(WARPS_PER_CTA* WARP_SIZE) __global__
 #pragma unroll
     for (int mask = THREADS_PER_ROW / 2; mask > 0; mask /= 2)
     {
-        thread_max = max(thread_max, SARATHI_SHFL_XOR_SYNC_WIDTH(thread_max, mask, THREADS_PER_ROW));
+        thread_max = max(thread_max, adagen_SHFL_XOR_SYNC_WIDTH(thread_max, mask, THREADS_PER_ROW));
     }
 
     // From this point, thread max in all the threads have the max within the row.
@@ -286,7 +286,7 @@ __launch_bounds__(WARPS_PER_CTA* WARP_SIZE) __global__
 #pragma unroll
     for (int mask = THREADS_PER_ROW / 2; mask > 0; mask /= 2)
     {
-        row_sum += SARATHI_SHFL_XOR_SYNC_WIDTH(row_sum, mask, THREADS_PER_ROW);
+        row_sum += adagen_SHFL_XOR_SYNC_WIDTH(row_sum, mask, THREADS_PER_ROW);
     }
 
     // From this point, all threads have the max and the sum for their rows in the thread_max and thread_sum variables
@@ -336,8 +336,8 @@ __launch_bounds__(WARPS_PER_CTA* WARP_SIZE) __global__
 #pragma unroll
         for (int mask = THREADS_PER_ROW / 2; mask > 0; mask /= 2)
         {
-            float other_max = SARATHI_SHFL_XOR_SYNC_WIDTH(max_val, mask, THREADS_PER_ROW);
-            int other_expert = SARATHI_SHFL_XOR_SYNC_WIDTH(expert, mask, THREADS_PER_ROW);
+            float other_max = adagen_SHFL_XOR_SYNC_WIDTH(max_val, mask, THREADS_PER_ROW);
+            int other_expert = adagen_SHFL_XOR_SYNC_WIDTH(expert, mask, THREADS_PER_ROW);
 
             // We want lower indices to "win" in every thread so we break ties this way
             if (other_max > max_val || (other_max == max_val && other_expert < expert))
@@ -471,7 +471,7 @@ void topkGatingSoftmaxKernelLauncher(
 }
 
 } // namespace moe
-} // namespace sarathi
+} // namespace adagen
 
 void topk_softmax(
     torch::Tensor& topk_weights,                // [num_tokens, topk]
@@ -490,7 +490,7 @@ void topk_softmax(
     const at::cuda::OptionalCUDAGuard device_guard(device_of(gating_output));
     const cudaStream_t stream = at::cuda::getCurrentCUDAStream();
     torch::Tensor softmax_workspace = torch::empty({workspace_size}, gating_output.options());
-    sarathi::moe::topkGatingSoftmaxKernelLauncher(
+    adagen::moe::topkGatingSoftmaxKernelLauncher(
         gating_output.data_ptr<float>(),
         topk_weights.data_ptr<float>(),
         topk_indices.data_ptr<int>(),

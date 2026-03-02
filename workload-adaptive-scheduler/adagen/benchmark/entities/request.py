@@ -1,7 +1,7 @@
 import logging
 from typing import Tuple
 
-from sarathi.benchmark.entities.base_entity import BaseEntity
+from adagen.benchmark.entities.base_entity import BaseEntity
 
 logger = logging.getLogger(__name__)
 

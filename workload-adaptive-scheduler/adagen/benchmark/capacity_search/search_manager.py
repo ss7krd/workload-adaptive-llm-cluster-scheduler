@@ -2,14 +2,14 @@ import argparse
 
 import ray
 
-from sarathi.benchmark.capacity_search.capacity_search import CapacitySearch
-from sarathi.benchmark.capacity_search.config import JobConfig
-from sarathi.benchmark.capacity_search.ray_utils import (
+from adagen.benchmark.capacity_search.capacity_search import CapacitySearch
+from adagen.benchmark.capacity_search.config import JobConfig
+from adagen.benchmark.capacity_search.ray_utils import (
     RayParallelRunner,
     ResourceManager,
 )
-from sarathi.logger import init_logger
-from sarathi.types import ReplicaResourceMapping
+from adagen.logger import init_logger
+from adagen.types import ReplicaResourceMapping
 
 logger = init_logger(__name__)
 

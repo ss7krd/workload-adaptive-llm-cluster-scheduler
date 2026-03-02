@@ -2,24 +2,24 @@ schedulers:
   - name: vllm
     scheduler: vllm
     batch_size: 128
-  - name: sarathi_256
-    scheduler: sarathi
+  - name: adagen_256
+    scheduler: adagen
     chunk_size: 256
     batch_size: 128
-  - name: sarathi_512
-    scheduler: sarathi
+  - name: adagen_512
+    scheduler: adagen
     chunk_size: 512
     batch_size: 128
-  - name: sarathi_1024
-    scheduler: sarathi
+  - name: adagen_1024
+    scheduler: adagen
     chunk_size: 1024
     batch_size: 128
-  - name: sarathi_2048
-    scheduler: sarathi
+  - name: adagen_2048
+    scheduler: adagen
     chunk_size: 2048
     batch_size: 128
-  - name: sarathi_4096
-    scheduler: sarathi
+  - name: adagen_4096
+    scheduler: adagen
     chunk_size: 4096
     batch_size: 128
 

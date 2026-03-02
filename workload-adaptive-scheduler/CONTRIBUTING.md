@@ -1,6 +1,6 @@
-# Contributing to Sarathi
+# Contributing to adagen
 
-Thank you for your interest in contributing to Sarathi!
+Thank you for your interest in contributing to adagen!
 Our community is open to everyone and welcomes all kinds of contributions, no matter how small or large.
 There are several ways you can contribute to the project:
 
@@ -11,9 +11,9 @@ There are several ways you can contribute to the project:
 However, remember that contributions aren't just about code.
 We believe in the power of community support; thus, answering queries, assisting others, and enhancing the documentation are highly regarded and beneficial contributions.
 
-Finally, one of the most impactful ways to support us is by raising awareness about Sarathi.
+Finally, one of the most impactful ways to support us is by raising awareness about adagen.
 Talk about it in your blog posts, highlighting how it's driving your incredible projects.
-Express your support on Twitter if Sarathi aids you, or simply offer your appreciation by starring our repository.
+Express your support on Twitter if adagen aids you, or simply offer your appreciation by starring our repository.
 
 
 ## Setup for development
@@ -66,5 +66,5 @@ If a comment isn't clear or you disagree with a suggestion, feel free to ask for
 
 ### Thank You
 
-Finally, thank you for taking the time to read these guidelines and for your interest in contributing to Sarathi.
-Your contributions make Sarathi a great tool for everyone!
+Finally, thank you for taking the time to read these guidelines and for your interest in contributing to adagen.
+Your contributions make adagen a great tool for everyone!

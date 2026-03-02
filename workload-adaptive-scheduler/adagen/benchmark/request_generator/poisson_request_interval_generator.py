@@ -1,8 +1,8 @@
 import math
 import random
 
-from sarathi.benchmark.config import PoissonRequestIntervalGeneratorConfig
-from sarathi.benchmark.request_generator.base_request_interval_generator import (
+from adagen.benchmark.config import PoissonRequestIntervalGeneratorConfig
+from adagen.benchmark.request_generator.base_request_interval_generator import (
     BaseRequestIntervalGenerator,
 )
 

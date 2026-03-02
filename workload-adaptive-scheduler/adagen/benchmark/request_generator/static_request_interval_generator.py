@@ -1,4 +1,4 @@
-from sarathi.benchmark.request_generator.base_request_interval_generator import (
+from adagen.benchmark.request_generator.base_request_interval_generator import (
     BaseRequestIntervalGenerator,
 )
 

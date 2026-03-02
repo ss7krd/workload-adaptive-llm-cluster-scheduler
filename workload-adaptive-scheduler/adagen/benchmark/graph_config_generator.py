@@ -1,5 +1,5 @@
 import sys
-sys.path.append("/home/shubhasu/shubhasu/sarathi-serve")
+sys.path.append("/home/shubhasu/shubhasu/adagen-serve")
 sys.path.append("/usr/local/lib/python3.10/dist-packages")
 sys.path.append("/usr/lib/python3/dist-packages")
 
@@ -16,17 +16,17 @@ import cupy
 import wandb
 from tqdm import tqdm
 
-from sarathi import LLMEngine, SamplingParams
-from sarathi.benchmark.config import BenchmarkConfig
-from sarathi.benchmark.entities import Request
-from sarathi.benchmark.request_generator import RequestGeneratorRegistry
-from sarathi.benchmark.utils.random import set_seeds
-from sarathi.config import ReplicaConfig
-from sarathi.metrics.metrics_store import MetricsStore
-from sarathi.types import ReplicaResourceMapping, ResourceMapping
-from sarathi.utils import get_ip
+from adagen import LLMEngine, SamplingParams
+from adagen.benchmark.config import BenchmarkConfig
+from adagen.benchmark.entities import Request
+from adagen.benchmark.request_generator import RequestGeneratorRegistry
+from adagen.benchmark.utils.random import set_seeds
+from adagen.config import ReplicaConfig
+from adagen.metrics.metrics_store import MetricsStore
+from adagen.types import ReplicaResourceMapping, ResourceMapping
+from adagen.utils import get_ip
 
-from sarathi.benchmark.global_variable_tester import MyClass
+from adagen.benchmark.global_variable_tester import MyClass
 
 logger = logging.getLogger(__name__)
 

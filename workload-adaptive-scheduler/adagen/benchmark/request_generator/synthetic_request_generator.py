@@ -1,17 +1,17 @@
 from typing import List
 
-from sarathi.benchmark.config import SyntheticRequestGeneratorConfig
-from sarathi.benchmark.entities import Request
-from sarathi.benchmark.request_generator.base_request_generator import (
+from adagen.benchmark.config import SyntheticRequestGeneratorConfig
+from adagen.benchmark.entities import Request
+from adagen.benchmark.request_generator.base_request_generator import (
     BaseRequestGenerator,
 )
-from sarathi.benchmark.request_generator.request_interval_generator_registry import (
+from adagen.benchmark.request_generator.request_interval_generator_registry import (
     RequestIntervalGeneratorRegistry,
 )
-from sarathi.benchmark.request_generator.request_length_generator_registry import (
+from adagen.benchmark.request_generator.request_length_generator_registry import (
     RequestLengthGeneratorRegistry,
 )
-from sarathi.benchmark.utils.random import set_seeds
+from adagen.benchmark.utils.random import set_seeds
 
 
 class SyntheticRequestGenerator(BaseRequestGenerator):

@@ -59,11 +59,11 @@ llumnix_plus = [2, 5, 8, 15, 26, 40, 75, 86, 92, 93, 94, 98, 100] #(a good resul
    
 # ax.plot(stepX,np.array(llumnix_plus)/100,c=color_list[0],ls='-',label="Llumnix+",fillstyle='none', linewidth = 4)
 
-sarathi = [4, 1, 17, 11, 8, 16, 6, 5, 6, 16, 3, 7, 1]
-sarathi = [4, 9, 15, 19, 23, 31, 39, 48, 61, 78, 83, 94, 100]
-sarathi = [3, 3, 5, 9, 13, 21, 29, 38, 51, 68, 73, 85, 100]
+adagen = [4, 1, 17, 11, 8, 16, 6, 5, 6, 16, 3, 7, 1]
+adagen = [4, 9, 15, 19, 23, 31, 39, 48, 61, 78, 83, 94, 100]
+adagen = [3, 3, 5, 9, 13, 21, 29, 38, 51, 68, 73, 85, 100]
 # ax.plot(stepX, np.array(static)-5, c = 'blue', marker = 'o', markersize = 26, ls = '-', label = "Scrooge", fillstyle = 'full', linewidth = 4)
-# ax.plot(stepX, np.array(sarathi)/100, c = color_list[3], ls = ':', label = "Round-Robin", fillstyle = 'none', linewidth = 4)
+# ax.plot(stepX, np.array(adagen)/100, c = color_list[3], ls = ':', label = "Round-Robin", fillstyle = 'none', linewidth = 4)
 # fortykValuesModified = []
 # for i in fortykValues:
 #     j = (i/100.0)*7222

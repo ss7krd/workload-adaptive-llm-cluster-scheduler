@@ -1,4 +1,4 @@
-from sarathi.benchmark.capacity_search.config.config import (
+from adagen.benchmark.capacity_search.config.config import (
     BenchmarkConfig,
     JobConfig,
     ModelConfig,

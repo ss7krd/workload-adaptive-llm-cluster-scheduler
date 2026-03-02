@@ -2,8 +2,8 @@ schedulers:
   - name: vllm
     scheduler: vllm
     batch_size: 128
-  - name: sarathi_256
-    scheduler: sarathi
+  - name: adagen_256
+    scheduler: adagen
     chunk_size: 256
     batch_size: 128
 
@@ -23,5 +23,5 @@ models:
   - name: codellama-34b-instruct-hf
     identifier: codellama/CodeLlama-34b-Instruct-hf
     parallel_specs: ["tp_2"]
-    scheduler_specs: ["vllm", "sarathi_256"]
+    scheduler_specs: ["vllm", "adagen_256"]
     traces: ["chat"]

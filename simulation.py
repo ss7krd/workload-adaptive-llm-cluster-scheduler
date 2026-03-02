@@ -189,7 +189,7 @@ def allDone_check(GPU_id):
     return is_remaining
 
 print("")
-print("Sarathi GPU0 Processing:")
+print("adagen GPU0 Processing:")
 iter = 1
 while True:
     if allDone_check(0) == 0:
@@ -235,7 +235,7 @@ maxIter = max(maxIter, (iter-1))
 minIter = min(minIter, (iter-1))
 print("")
 
-print("Sarathi GPU1 Processing:")
+print("adagen GPU1 Processing:")
 iter = 1
 while True:
     if allDone_check(1) == 0:

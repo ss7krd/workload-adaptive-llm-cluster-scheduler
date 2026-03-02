@@ -9,10 +9,10 @@ import pandas as pd
 import ray
 import wandb
 
-from sarathi.benchmark.capacity_search.config import BenchmarkConfig, JobConfig
-from sarathi.benchmark.capacity_search.ray_utils import ResourceManager, get_ip
-from sarathi.logger import init_logger
-from sarathi.types import ReplicaResourceMapping
+from adagen.benchmark.capacity_search.config import BenchmarkConfig, JobConfig
+from adagen.benchmark.capacity_search.ray_utils import ResourceManager, get_ip
+from adagen.logger import init_logger
+from adagen.types import ReplicaResourceMapping
 
 logger = init_logger(__name__)
 
@@ -57,7 +57,7 @@ class CapacitySearch:
         resource_mapping_arg = (
             f"--replica_resource_mapping '{json.dumps(self.resource_mapping)}'"
         )
-        command = f"python -m sarathi.benchmark.main {benchmark_config.to_args()} {resource_mapping_arg}"
+        command = f"python -m adagen.benchmark.main {benchmark_config.to_args()} {resource_mapping_arg}"
         logger.debug(f"Running command: {command}")
 
         return command

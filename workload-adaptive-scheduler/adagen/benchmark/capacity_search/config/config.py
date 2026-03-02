@@ -95,12 +95,12 @@ class SchedulerConfig:
                 "scheduler_config_type": "ORCA",
                 "orca_scheduler_config_max_num_seqs": self.batch_size,
             }
-        elif self.scheduler == "sarathi":
+        elif self.scheduler == "adagen":
             assert self.chunk_size is not None
             return {
-                "scheduler_config_type": "SARATHI",
-                "sarathi_scheduler_config_max_num_seqs": self.batch_size,
-                "sarathi_scheduler_config_chunk_size": self.chunk_size,
+                "scheduler_config_type": "adagen",
+                "adagen_scheduler_config_max_num_seqs": self.batch_size,
+                "adagen_scheduler_config_chunk_size": self.chunk_size,
             }
         else:
             raise ValueError(f"Unknown scheduler: {self.scheduler}")

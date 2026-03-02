@@ -1,3 +1,3 @@
-from sarathi.benchmark.request_generator.request_generator_registry import (
+from adagen.benchmark.request_generator.request_generator_registry import (
     RequestGeneratorRegistry,
 )

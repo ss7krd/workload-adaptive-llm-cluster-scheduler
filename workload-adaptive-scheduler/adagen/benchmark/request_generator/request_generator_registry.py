@@ -1,11 +1,11 @@
-from sarathi.benchmark.request_generator.synthetic_request_generator import (
+from adagen.benchmark.request_generator.synthetic_request_generator import (
     SyntheticRequestGenerator,
 )
-from sarathi.benchmark.request_generator.trace_request_generator import (
+from adagen.benchmark.request_generator.trace_request_generator import (
     TraceRequestGenerator,
 )
-from sarathi.types import RequestGeneratorType
-from sarathi.utils.base_registry import BaseRegistry
+from adagen.types import RequestGeneratorType
+from adagen.utils.base_registry import BaseRegistry
 
 
 class RequestGeneratorRegistry(BaseRegistry):

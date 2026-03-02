@@ -1,9 +1,9 @@
 Metadata-Version: 2.1
-Name: sarathi
+Name: adagen
 Version: 0.1.7
 Summary: A high-throughput and low-latency serving engine for LLMs
-Home-page: https://github.com/microsoft/sarathi
-Author: Sarathi Team
+Home-page: https://github.com/microsoft/adagen
+Author: adagen Team
 License: Apache 2.0
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3.10
@@ -13,20 +13,20 @@ Requires-Python: >=3.10
 Description-Content-Type: text/markdown
 License-File: LICENSE
 
-# Sarathi-Serve
+# adagen-Serve
 
-Sarathi-Serve is a high througput and low-latency LLM serving framework. Please refer to our [OSDI'24 paper](https://www.usenix.org/conference/osdi24/presentation/agrawal) for more details. 
+adagen-Serve is a high througput and low-latency LLM serving framework. Please refer to our [OSDI'24 paper](https://www.usenix.org/conference/osdi24/presentation/agrawal) for more details. 
 
 ## Setup
 
 ### Setup CUDA
 
-Sarathi-Serve has been tested with CUDA 12.3 on H100 and A100 GPUs.
+adagen-Serve has been tested with CUDA 12.3 on H100 and A100 GPUs.
 
 ### Clone repository
 
 ```sh
-git clone git@github.com:microsoft/sarathi-serve.git
+git clone git@github.com:microsoft/adagen-serve.git
 ```
 
 ### Create mamba environment
@@ -44,7 +44,7 @@ Create a Python 3.10 environment,
 mamba create -p ./env python=3.10  
 ```
 
-### Install Sarathi-Serve
+### Install adagen-Serve
 
 ```sh
 pip install -e . --extra-index-url https://flashinfer.ai/whl/cu121/torch2.3/
@@ -60,7 +60,7 @@ If you use our work, please consider citing our paper:
 
 ```
 @article{agrawal2024taming,
-  title={Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve},
+  title={Taming Throughput-Latency Tradeoff in LLM Inference with adagen-Serve},
   author={Agrawal, Amey and Kedia, Nitin and Panwar, Ashish and Mohan, Jayashree and Kwatra, Nipun and Gulavani, Bhargav S and Tumanov, Alexey and Ramjee, Ramachandran},
   journal={Proceedings of 18th USENIX Symposium on Operating Systems Design and Implementation, 2024, Santa Clara},
   year={2024}
@@ -69,6 +69,6 @@ If you use our work, please consider citing our paper:
 
 ## Acknowledgment
 
-This repository originally started as a fork of the [vLLM project](https://vllm-project.github.io/). Sarathi-Serve is a research prototype and does not have complete feature parity with open-source vLLM. We have only retained the most critical features and adopted the codebase for faster research iterations.
+This repository originally started as a fork of the [vLLM project](https://vllm-project.github.io/). adagen-Serve is a research prototype and does not have complete feature parity with open-source vLLM. We have only retained the most critical features and adopted the codebase for faster research iterations.
 
 

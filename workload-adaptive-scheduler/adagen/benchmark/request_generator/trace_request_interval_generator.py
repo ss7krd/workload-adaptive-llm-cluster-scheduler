@@ -2,8 +2,8 @@ import logging
 
 import pandas as pd
 
-from sarathi.benchmark.config import TraceRequestIntervalGeneratorConfig
-from sarathi.benchmark.request_generator.base_request_interval_generator import (
+from adagen.benchmark.config import TraceRequestIntervalGeneratorConfig
+from adagen.benchmark.request_generator.base_request_interval_generator import (
     BaseRequestIntervalGenerator,
 )
 

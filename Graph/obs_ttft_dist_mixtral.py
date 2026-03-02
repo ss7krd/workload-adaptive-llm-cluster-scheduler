@@ -54,11 +54,11 @@ exhaustive = [9, 14, 20, 40, 52, 70, 81, 88, 95, 97, 99, 100, 100]
    
 ax.plot(stepX,np.array(exhaustive)/100,c=color_list[0],ls='-',label="Exhaustive",fillstyle='none', linewidth = 4)
 
-sarathi = [4, 1, 17, 11, 8, 16, 6, 5, 6, 16, 3, 7, 1]
-sarathi = [4, 9, 15, 19, 23, 31, 39, 48, 61, 78, 83, 94, 100]
-sarathi = [2, 2, 3, 7, 10, 20, 25, 40, 48, 59, 70, 82, 100]
+adagen = [4, 1, 17, 11, 8, 16, 6, 5, 6, 16, 3, 7, 1]
+adagen = [4, 9, 15, 19, 23, 31, 39, 48, 61, 78, 83, 94, 100]
+adagen = [2, 2, 3, 7, 10, 20, 25, 40, 48, 59, 70, 82, 100]
 # ax.plot(stepX, np.array(static)-5, c = 'blue', marker = 'o', markersize = 26, ls = '-', label = "Scrooge", fillstyle = 'full', linewidth = 4)
-ax.plot(stepX, np.array(sarathi)/100, c = color_list[3], ls = ':', label = "Sarathi", fillstyle = 'none', linewidth = 4)
+ax.plot(stepX, np.array(adagen)/100, c = color_list[3], ls = ':', label = "adagen", fillstyle = 'none', linewidth = 4)
 # fortykValuesModified = []
 # for i in fortykValues:
 #     j = (i/100.0)*7222

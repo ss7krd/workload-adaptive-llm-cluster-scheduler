@@ -1,17 +1,17 @@
-from sarathi.benchmark.request_generator.gamma_request_interval_generator import (
+from adagen.benchmark.request_generator.gamma_request_interval_generator import (
     GammaRequestIntervalGenerator,
 )
-from sarathi.benchmark.request_generator.poisson_request_interval_generator import (
+from adagen.benchmark.request_generator.poisson_request_interval_generator import (
     PoissonRequestIntervalGenerator,
 )
-from sarathi.benchmark.request_generator.static_request_interval_generator import (
+from adagen.benchmark.request_generator.static_request_interval_generator import (
     StaticRequestIntervalGenerator,
 )
-from sarathi.benchmark.request_generator.trace_request_interval_generator import (
+from adagen.benchmark.request_generator.trace_request_interval_generator import (
     TraceRequestIntervalGenerator,
 )
-from sarathi.types import RequestIntervalGeneratorType
-from sarathi.utils.base_registry import BaseRegistry
+from adagen.types import RequestIntervalGeneratorType
+from adagen.utils.base_registry import BaseRegistry
 
 
 class RequestIntervalGeneratorRegistry(BaseRegistry):

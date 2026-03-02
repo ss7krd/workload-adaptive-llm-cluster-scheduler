@@ -3,11 +3,11 @@ import os
 
 import yaml
 
-from sarathi.benchmark.benchmark_runner import BenchmarkRunnerLauncher
-from sarathi.benchmark.config import BenchmarkConfig
-from sarathi.benchmark.constants import LOGGER_FORMAT, LOGGER_TIME_FORMAT
-from sarathi.benchmark.utils.random import set_seeds
-from sarathi.logger import init_logger
+from adagen.benchmark.benchmark_runner import BenchmarkRunnerLauncher
+from adagen.benchmark.config import BenchmarkConfig
+from adagen.benchmark.constants import LOGGER_FORMAT, LOGGER_TIME_FORMAT
+from adagen.benchmark.utils.random import set_seeds
+from adagen.logger import init_logger
 
 logger = init_logger(__name__)
 

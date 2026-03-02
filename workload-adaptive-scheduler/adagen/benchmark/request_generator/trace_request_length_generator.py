@@ -4,8 +4,8 @@ from typing import Tuple
 import numpy as np
 import pandas as pd
 
-from sarathi.benchmark.config import TraceRequestLengthGeneratorConfig
-from sarathi.benchmark.request_generator.base_request_length_generator import (
+from adagen.benchmark.config import TraceRequestLengthGeneratorConfig
+from adagen.benchmark.request_generator.base_request_length_generator import (
     BaseRequestLengthGenerator,
 )
 

@@ -1,7 +1,7 @@
 /*
  * Adapted from
  * https://github.com/NVIDIA/FasterTransformer/blob/release/v5.3_tag/src/fastertransformer/kernels/reduce_kernel_utils.cuh
- * Copyright (c) 2023, The Sarathi team.
+ * Copyright (c) 2023, The adagen team.
  * Copyright (c) 2020-2023, NVIDIA CORPORATION.  All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,10 +19,10 @@
 #pragma once
 
 #define WARP_SIZE 32
-#define SARATHI_SHFL_XOR_SYNC(var, lane_mask) \
+#define adagen_SHFL_XOR_SYNC(var, lane_mask) \
     __shfl_xor_sync(uint32_t(-1), var, lane_mask)
 
-namespace sarathi {
+namespace adagen {
 
 namespace detail {
 
@@ -54,7 +54,7 @@ __inline__ __device__ T warpReduce(T val, ReduceFnType<T> fn) {
   static_assert(numLanes <= WARP_SIZE);
 #pragma unroll
   for (int mask = numLanes >> 1; mask > 0; mask >>= 1)
-    val = fn(val, SARATHI_SHFL_XOR_SYNC(val, mask));
+    val = fn(val, adagen_SHFL_XOR_SYNC(val, mask));
 
   return val;
 }
@@ -94,4 +94,4 @@ __inline__ __device__ T blockReduceSum(T val) {
   return blockReduce<T, maxBlockSize>(val, detail::_sum<T>);
 }
 
-}  // namespace sarathi
+}  // namespace adagen

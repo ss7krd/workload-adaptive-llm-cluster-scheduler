@@ -1,4 +1,4 @@
-name: sarathi-serve
+name: adagen-serve
 channels:
   - conda-forge
 dependencies:

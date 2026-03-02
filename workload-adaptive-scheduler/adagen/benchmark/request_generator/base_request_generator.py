@@ -2,8 +2,8 @@ import json
 from abc import ABC, abstractmethod
 from typing import List
 
-from sarathi.benchmark.config import BaseRequestGeneratorConfig
-from sarathi.benchmark.entities import Request
+from adagen.benchmark.config import BaseRequestGeneratorConfig
+from adagen.benchmark.entities import Request
 
 
 class BaseRequestGenerator(ABC):

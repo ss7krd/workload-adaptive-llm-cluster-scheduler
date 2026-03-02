@@ -7,10 +7,10 @@
 #include "dispatch_utils.h"
 
 #define CEILDIV(x, y) (((x) + (y) - 1) / (y))
-#define SARATHI_DevFuncAttribute_SET_MaxDynamicSharedMemorySize(FUNC, VAL) \
+#define adagen_DevFuncAttribute_SET_MaxDynamicSharedMemorySize(FUNC, VAL) \
     cudaFuncSetAttribute(FUNC, cudaFuncAttributeMaxDynamicSharedMemorySize, VAL)
 
-namespace sarathi {
+namespace adagen {
 
 namespace {
 __device__ __forceinline__ int32_t index(int32_t total_col, int32_t row,
@@ -107,14 +107,14 @@ __global__ void moe_align_block_size_kernel(scalar_t* __restrict__ topk_ids,
     ++tokens_cnts[index(num_experts, threadIdx.x, expert_id)];
   }
 }
-}  // namespace sarathi
+}  // namespace adagen
 
 void moe_align_block_size(torch::Tensor topk_ids, int64_t num_experts,
                           int64_t block_size, torch::Tensor sorted_token_ids,
                           torch::Tensor experts_ids,
                           torch::Tensor num_tokens_post_pad) {
   const cudaStream_t stream = at::cuda::getCurrentCUDAStream();
-  SARATHI_DISPATCH_INTEGRAL_TYPES(
+  adagen_DISPATCH_INTEGRAL_TYPES(
       topk_ids.scalar_type(), "moe_align_block_size_kernel", [&] {
         // calc needed amount of shared mem for `tokens_cnts` and `cumsum`
         // tensors
@@ -123,8 +123,8 @@ void moe_align_block_size(torch::Tensor topk_ids, int64_t num_experts,
             sizeof(int32_t);
 
         // set dynamic shared mem
-        auto kernel = sarathi::moe_align_block_size_kernel<scalar_t>;
-        AT_CUDA_CHECK(SARATHI_DevFuncAttribute_SET_MaxDynamicSharedMemorySize(
+        auto kernel = adagen::moe_align_block_size_kernel<scalar_t>;
+        AT_CUDA_CHECK(adagen_DevFuncAttribute_SET_MaxDynamicSharedMemorySize(
             (void*)kernel, shared_mem));
         kernel<<<1, num_experts, shared_mem, stream>>>(
             topk_ids.data_ptr<scalar_t>(), sorted_token_ids.data_ptr<int32_t>(),

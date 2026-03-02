@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Tuple
 
-from sarathi.benchmark.config import BaseRequestLengthGeneratorConfig
+from adagen.benchmark.config import BaseRequestLengthGeneratorConfig
 
 
 class BaseRequestLengthGenerator(ABC):

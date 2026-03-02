@@ -1,7 +1,7 @@
 from scipy.stats import gamma
 
-from sarathi.benchmark.config import GammaRequestIntervalGeneratorConfig
-from sarathi.benchmark.request_generator.base_request_interval_generator import (
+from adagen.benchmark.config import GammaRequestIntervalGeneratorConfig
+from adagen.benchmark.request_generator.base_request_interval_generator import (
     BaseRequestIntervalGenerator,
 )
 

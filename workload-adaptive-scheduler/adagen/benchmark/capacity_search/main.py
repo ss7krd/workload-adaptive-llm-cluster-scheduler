@@ -15,8 +15,8 @@ import time
 import wandb
 import yaml
 
-from sarathi.benchmark.capacity_search.search_manager import SearchManager
-from sarathi.logger import init_logger
+from adagen.benchmark.capacity_search.search_manager import SearchManager
+from adagen.logger import init_logger
 
 logger = init_logger(__name__)
 

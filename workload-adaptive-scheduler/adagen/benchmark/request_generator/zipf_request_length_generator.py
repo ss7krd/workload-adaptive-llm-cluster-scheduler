@@ -1,10 +1,10 @@
 from typing import Tuple
 
-from sarathi.benchmark.config import ZipfRequestLengthGeneratorConfig
-from sarathi.benchmark.request_generator.base_request_length_generator import (
+from adagen.benchmark.config import ZipfRequestLengthGeneratorConfig
+from adagen.benchmark.request_generator.base_request_length_generator import (
     BaseRequestLengthGenerator,
 )
-from sarathi.benchmark.utils.zipf_generator import ZipfGenerator
+from adagen.benchmark.utils.zipf_generator import ZipfGenerator
 
 
 class ZipfRequestLengthGenerator(BaseRequestLengthGenerator):

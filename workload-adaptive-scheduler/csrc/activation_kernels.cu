@@ -3,7 +3,7 @@
 
 #include "dispatch_utils.h"
 
-namespace sarathi {
+namespace adagen {
 
 template<typename T>
 __device__ __forceinline__ T silu(const T& x) {
@@ -24,7 +24,7 @@ __global__ void silu_and_mul_kernel(
   }
 }
 
-} // namespace sarathi
+} // namespace adagen
 
 void silu_and_mul(
   torch::Tensor& out,      // [num_tokens, d]
@@ -36,18 +36,18 @@ void silu_and_mul(
   dim3 grid(num_tokens);
   dim3 block(std::min(d, 1024));
   const cudaStream_t stream = at::cuda::getCurrentCUDAStream();
-  SARATHI_DISPATCH_FLOATING_TYPES(
+  adagen_DISPATCH_FLOATING_TYPES(
     input.scalar_type(),
     "silu_and_mul_kernel",
     [&] {
-      sarathi::silu_and_mul_kernel<scalar_t><<<grid, block, 0, stream>>>(
+      adagen::silu_and_mul_kernel<scalar_t><<<grid, block, 0, stream>>>(
         out.data_ptr<scalar_t>(),
         input.data_ptr<scalar_t>(),
         d);
     });
 }
 
-namespace sarathi {
+namespace adagen {
 
 // Element-wise activation kernel template.
 template<typename scalar_t, scalar_t (*ACT_FN)(const scalar_t&)>
@@ -62,7 +62,7 @@ __global__ void activation_kernel(
   }
 }
 
-} // namespace sarathi
+} // namespace adagen
 
 // Launch element-wise activation kernel.
 #define LAUNCH_ACTIVATION_KERNEL(KERNEL)                                                  \
@@ -71,17 +71,17 @@ __global__ void activation_kernel(
   dim3 grid(num_tokens);                                                                  \
   dim3 block(std::min(d, 1024));                                                          \
   const cudaStream_t stream = at::cuda::getCurrentCUDAStream();                           \
-  SARATHI_DISPATCH_FLOATING_TYPES(                                                           \
+  adagen_DISPATCH_FLOATING_TYPES(                                                           \
     input.scalar_type(),                                                                  \
     "activation_kernel",                                                                  \
     [&] {                                                                                 \
-      sarathi::activation_kernel<scalar_t, KERNEL<scalar_t>><<<grid, block, 0, stream>>>(    \
+      adagen::activation_kernel<scalar_t, KERNEL<scalar_t>><<<grid, block, 0, stream>>>(    \
         out.data_ptr<scalar_t>(),                                                         \
         input.data_ptr<scalar_t>(),                                                       \
         d);                                                                               \
     });
 
-namespace sarathi {
+namespace adagen {
 
 template<typename T>
 __device__ __forceinline__ T gelu_new_kernel(const T& x) {
@@ -97,18 +97,18 @@ __device__ __forceinline__ T gelu_fast_kernel(const T& x) {
   return ((T) 0.5) * x * (((T) 1.0) + t);
 }
 
-} // namespace sarathi
+} // namespace adagen
 
 void gelu_new(
   torch::Tensor& out,     // [num_tokens, d]
   torch::Tensor& input)   // [num_tokens, d]
 {
-  LAUNCH_ACTIVATION_KERNEL(sarathi::gelu_new_kernel);
+  LAUNCH_ACTIVATION_KERNEL(adagen::gelu_new_kernel);
 }
 
 void gelu_fast(
   torch::Tensor& out,     // [num_tokens, d]
   torch::Tensor& input)   // [num_tokens, d]
 {
-  LAUNCH_ACTIVATION_KERNEL(sarathi::gelu_fast_kernel);
+  LAUNCH_ACTIVATION_KERNEL(adagen::gelu_fast_kernel);
 }

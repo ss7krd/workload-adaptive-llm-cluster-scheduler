@@ -3,9 +3,9 @@ from typing import List
 
 import pandas as pd
 
-from sarathi.benchmark.config import TraceRequestGeneratorConfig
-from sarathi.benchmark.entities import Request
-from sarathi.benchmark.request_generator.base_request_generator import (
+from adagen.benchmark.config import TraceRequestGeneratorConfig
+from adagen.benchmark.entities import Request
+from adagen.benchmark.request_generator.base_request_generator import (
     BaseRequestGenerator,
 )
 

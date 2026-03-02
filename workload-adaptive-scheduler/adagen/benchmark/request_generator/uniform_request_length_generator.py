@@ -2,7 +2,7 @@ import math
 import random
 from typing import Tuple
 
-from sarathi.benchmark.request_generator.base_request_length_generator import (
+from adagen.benchmark.request_generator.base_request_length_generator import (
     BaseRequestLengthGenerator,
 )
 

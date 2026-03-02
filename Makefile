@@ -2,23 +2,23 @@
 .DEFAULT_GOAL := help
 
 lint/flake8: ## check style with flake8
-	flake8 sarathi
+	flake8 adagen
 
 lint/black: ## check style with black
-	black --check sarathi
+	black --check adagen
 
 lint/isort: ## check style with isort
-	isort --check-only --profile black sarathi
+	isort --check-only --profile black adagen
 
 lint: lint/black lint/isort ## check style
 
 format/black: ## format code with black
-	black sarathi
+	black adagen
 
 format/autopep8: ## format code with autopep8
-	autopep8 --in-place --recursive sarathi/
+	autopep8 --in-place --recursive adagen/
 
 format/isort: ## format code with isort
-	isort --profile black sarathi
+	isort --profile black adagen
 
 format: format/black format/isort  ## format code

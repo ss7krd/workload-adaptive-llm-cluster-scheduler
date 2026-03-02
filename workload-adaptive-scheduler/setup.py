@@ -93,7 +93,7 @@ ext_modules = []
 
 # Positional encoding kernels.
 positional_encoding_extension = CUDAExtension(
-    name="sarathi.pos_encoding_ops",
+    name="adagen.pos_encoding_ops",
     sources=["csrc/pos_encoding.cpp", "csrc/pos_encoding_kernels.cu"],
     extra_compile_args={
         "cxx": CXX_FLAGS,
@@ -104,7 +104,7 @@ ext_modules.append(positional_encoding_extension)
 
 # Layer normalization kernels.
 layernorm_extension = CUDAExtension(
-    name="sarathi.layernorm_ops",
+    name="adagen.layernorm_ops",
     sources=["csrc/layernorm.cpp", "csrc/layernorm_kernels.cu"],
     extra_compile_args={
         "cxx": CXX_FLAGS,
@@ -115,7 +115,7 @@ ext_modules.append(layernorm_extension)
 
 # Activation kernels.
 activation_extension = CUDAExtension(
-    name="sarathi.activation_ops",
+    name="adagen.activation_ops",
     sources=["csrc/activation.cpp", "csrc/activation_kernels.cu"],
     extra_compile_args={
         "cxx": CXX_FLAGS,
@@ -126,7 +126,7 @@ ext_modules.append(activation_extension)
 
 # Fused MOR kernels.
 moe_extension = CUDAExtension(
-    name="sarathi.moe_ops",
+    name="adagen.moe_ops",
     sources=["csrc/moe.cpp", "csrc/moe_align_block_size_kernels.cu", "csrc/moe_topk_softmax_kernels.cu"],
     extra_compile_args={
         "cxx": CXX_FLAGS,
@@ -165,14 +165,14 @@ def get_requirements() -> List[str]:
 
 
 setuptools.setup(
-    name="sarathi",
-    version=find_version(get_path("sarathi", "__init__.py")),
-    author="Sarathi Team",
+    name="adagen",
+    version=find_version(get_path("adagen", "__init__.py")),
+    author="adagen Team",
     license="Apache 2.0",
     description=("A high-throughput and low-latency serving engine for LLMs"),
     long_description=read_readme(),
     long_description_content_type="text/markdown",
-    url="https://github.com/microsoft/sarathi",
+    url="https://github.com/microsoft/adagen",
     classifiers=[
         "Programming Language :: Python :: 3.10",
         "License :: OSI Approved :: Apache Software License",
