@@ -4,7 +4,7 @@ In this project, we challenge the conventional request routing paradigm that foc
 
 vLLM is used as the inference engine for this project.
 
-The main folders are AdaGen and Graph. Under AdaGen folder, ```adagen/benchmark/benchmark_runner.py``` file consists of the scheduling logics following the paper.  Graph folder consists of the matplotlib codes to produce each figure.
+The main folders are workload-adaptive-scheduler and Graph. Under workload-adaptive-scheduler folder, ```adagen/benchmark/benchmark_runner.py``` file consists of the scheduling logics following the paper.  Graph folder consists of the matplotlib codes to produce each figure.
 
 The necessary libraries and dependencies of the virtual environment required to run the project are given in ```requirements.txt``` file. To setup a new virtual environment using ```mamba``` or any other package manager, one needs to install these libraries using pip.
 
