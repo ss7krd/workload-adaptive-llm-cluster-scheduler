@@ -1,4 +1,6 @@
-## Workload-Adaptive LLM Cluster Scheduler (EuroSys '26)
+## Workload-Adaptive LLM Cluster Scheduler or Request Router (EuroSys '26)
+
+In this project, we challenge the conventional request routing paradigm that focuses solely on load balancing across multiple instances of an LLM. Through systematic experiments, we discover that load balancing alone is insufficient for LLM workloads with diverse request characteristics. Unlike traditional deep learning inference where requests have uniform properties, LLM requests vary significantly in both prompt (prefill) and response (decode) lengths. This diversity means that even with perfectly balanced resource usage, the compute layout–organization of tokens across batches within each instance–ultimately determines the latency metrics. We design AdaGen as a workload-adaptive routing scheduler that progressively optimizes compute layouts across instances by leveraging the diversity pattern present in the workload. Further details can be found in our EuroSys '26 paper.
 
 vLLM is used as the inference engine for this project.
 
